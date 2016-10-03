@@ -12,21 +12,22 @@ public class GameController {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		GameController gc = new GameController();
 
 		if (PlayerTurn == 1){
-			SumOfDice = die1.Roll() + die2.Roll();
-			player1.SetPoints( LoseOfPoints() );
-			Winner = WinState();
+			SumOfDice = gc.die1.Roll() + gc.die2.Roll();
+			player1.SetPoints( gc.LoseOfPoints() );
+			Winner = gc.WinState();
 		}
 
 		if(PlayerTurn == 2){
-			SumOfDice = die1.Roll() + die2.Roll();
-			player2.SetPoints( LoseOfPoints() );
-			Winner = WinState();
+			SumOfDice = gc.die1.Roll() + gc.die2.Roll();
+			player2.SetPoints( gc.LoseOfPoints() );
+			Winner = gc.WinState();
 		}
 	}
 
-	private static int WinState() {
+	private int WinState() {
 
 		if (player1.GetPoints() >= 40){
 			System.out.println("Player 1 has won the g!");
@@ -43,7 +44,7 @@ public class GameController {
 	}
 
 
-	private static int LoseOfPoints() {
+	private int LoseOfPoints() {
 
 		if(PlayerTurn == 1){
 
