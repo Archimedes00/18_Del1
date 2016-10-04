@@ -14,16 +14,27 @@ public class GameController {
 		// TODO Auto-generated method stub
 		GameController gc = new GameController();
 
-		if (PlayerTurn == 1){
-			SumOfDice = gc.die1.Roll() + gc.die2.Roll();
-			player1.SetPoints( gc.LoseOfPoints() );
-			Winner = gc.WinState();
-		}
+		while(gc.WinState() == 0){
 
-		if(PlayerTurn == 2){
-			SumOfDice = gc.die1.Roll() + gc.die2.Roll();
-			player2.SetPoints( gc.LoseOfPoints() );
-			Winner = gc.WinState();
+			if (PlayerTurn == 1){
+				SumOfDice = gc.die1.Roll() + gc.die2.Roll();
+				player1.SetPoints( gc.LoseOfPoints(player1) );
+				System.out.println("");
+				System.out.println("player1 rolled " + SumOfDice);
+				System.out.println("player1's has " + player1.GetPoints() + " points");
+				Winner = gc.WinState();
+				PlayerTurn = 2;
+			}
+
+			if(PlayerTurn == 2){
+				SumOfDice = gc.die1.Roll() + gc.die2.Roll();
+				player2.SetPoints( gc.LoseOfPoints(player2) );
+				System.out.println("");
+				System.out.println("player2 rullede " + SumOfDice);
+				System.out.println("player2 has this many pointes " + player2.GetPoints());
+				Winner = gc.WinState();
+				PlayerTurn = 1;
+			}
 		}
 	}
 
@@ -44,28 +55,28 @@ public class GameController {
 	}
 
 
-	private int LoseOfPoints() {
+	private int LoseOfPoints(Player p) {
 
-		if(PlayerTurn == 1){
 
-			if(SumOfDice == 2){
-				return 0;
-			}
-			else {
-				return player1.GetPoints();
-			}
-		}
-		else if(PlayerTurn == 2){
-
-			if(SumOfDice == 2){
-				return 0;
-			}
-			else {
-				return player2.GetPoints();
-			}
-		}
-		else {
+		if(SumOfDice == 2){
 			return 0;
 		}
+		else {
+			return p.GetPoints() + SumOfDice;		//	Kan det her lade sig gøre?? 
+		}
+
+
 	}
+
+	private int TwoOfAKind() {
+
+		if (PlayerTurn == 1){
+			if (die1 == die2 && SumOfDice > 2){
+
+			}
+		}
+
+		return 0;
+	}
+
 }	
