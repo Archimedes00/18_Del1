@@ -13,11 +13,11 @@ public class GameController {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		GameController gc = new GameController();
-// heyo
+
 		while(gc.WinState() == 0){
 
 			if (PlayerTurn == 1){
-				SumOfDice = gc.die1.Roll() + gc.die2.Roll();
+				SumOfDice = gc.die1.roll() + gc.die2.roll();
 				player1.SetPoints( gc.LoseOfPoints(player1) );
 				System.out.println("");
 				System.out.println("player1 rolled " + SumOfDice);
@@ -27,7 +27,7 @@ public class GameController {
 			}
 
 			if(PlayerTurn == 2){
-				SumOfDice = gc.die1.Roll() + gc.die2.Roll();
+				SumOfDice = gc.die1.roll() + gc.die2.roll();
 				player2.SetPoints( gc.LoseOfPoints(player2) );
 				System.out.println("");
 				System.out.println("player2 rullede " + SumOfDice);
