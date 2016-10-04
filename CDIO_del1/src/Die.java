@@ -6,3 +6,5 @@ public class Die
 		return (int) (Math.random()*6+1);
 	}
 }
+
+//fvs push test
