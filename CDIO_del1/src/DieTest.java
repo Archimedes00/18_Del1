@@ -1,10 +1,10 @@
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 public class DieTest {
 
-	@Test
+	//@Test
 	public void test() {
 
 		Die d1 = new Die();

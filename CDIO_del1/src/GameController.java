@@ -1,39 +1,39 @@
 
 public class GameController {
 
-	static int SumOfDice = 0;				// kommer fra Player-klasse
-	static int PlayerTurn = 1;				// kommer fra min egen klasse
-	static int Winner = 0; 
+	int SumOfDice = 0;				// kommer fra Player-klasse
+	int PlayerTurn = 1;				// kommer fra min egen klasse
+	int Winner = 0; 
 
-	static Player player1 = new Player();
-	static Player player2 = new Player();
+	Player player1 = new Player();
+	Player player2 = new Player();
 	Die die1 = new Die();
 	Die die2 = new Die();
-
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		GameController gc = new GameController();
 
 		while(gc.WinState() == 0){
 
-			if (PlayerTurn == 1){
-				SumOfDice = gc.die1.roll() + gc.die2.roll();
-				player1.SetPoints( gc.LoseOfPoints(player1) );
+			if (gc.PlayerTurn == 1){
+				gc.SumOfDice = gc.die1.roll() + gc.die2.roll();
+				gc.player1.SetPoints( gc.LoseOfPoints(gc.player1) );
 				System.out.println("");
-				System.out.println("player1 rolled " + SumOfDice);
-				System.out.println("player1's has " + player1.GetPoints() + " points");
-				Winner = gc.WinState();
-				PlayerTurn = 2;
+				System.out.println("player1 rolled " + gc.SumOfDice);
+				System.out.println("player1's has " + gc.player1.GetPoints() + " points");
+				gc.Winner = gc.WinState();
+				gc.PlayerTurn = 2;
 			}
 
-			if(PlayerTurn == 2){
-				SumOfDice = gc.die1.roll() + gc.die2.roll();
-				player2.SetPoints( gc.LoseOfPoints(player2) );
+			if(gc.PlayerTurn == 2){
+				gc.SumOfDice = gc.die1.roll() + gc.die2.roll();
+				gc.player2.SetPoints( gc.LoseOfPoints(gc.player2) );
 				System.out.println("");
-				System.out.println("player2 rullede " + SumOfDice);
-				System.out.println("player2 has this many pointes " + player2.GetPoints());
-				Winner = gc.WinState();
-				PlayerTurn = 1;
+				System.out.println("player2 rullede " + gc.SumOfDice);
+				System.out.println("player2 has this many pointes " + gc.player2.GetPoints());
+				gc.Winner = gc.WinState();
+				gc.PlayerTurn = 1;
 			}
 		}
 	}
@@ -46,7 +46,7 @@ public class GameController {
 		}
 
 		else if (player2.GetPoints() >= 40){
-			System.out.println("Lol.dk player 2 has won the g!");
+			System.out.println("Player 2 has won the g!");
 			return 2;
 		}
 		else {
@@ -57,12 +57,11 @@ public class GameController {
 
 	private int LoseOfPoints(Player p) {
 
-
 		if(SumOfDice == 2){
 			return 0;
 		}
 		else {
-			return p.GetPoints() + SumOfDice;		//	Kan det her lade sig gøre?? 
+			return p.GetPoints() + SumOfDice;		//	Kan det her lade sig gøre??. Ja det kan det :-)
 		}
 
 
