@@ -37,17 +37,17 @@ public class GameController {
 				System.out.println("player1 rolled " + SumOfDice);
 				System.out.println("player1's has " + player1.GetPoints() + " points");
 				Winner = WinState();
-				PlayerTurn = 2;
+				PlayerTurn.SetTurn(2);
 			}
 
 			if(PlayerTurn.GetTurn() == 2){
 				SumOfDice = die1.roll() + die2.roll();
-//				player2.SetPoints( LoseOfPoints(player2) );
+				player2.SetPoints( LoseOfPoints(player2) );
 				System.out.println("");
 				System.out.println("player2 rullede " + SumOfDice);
 				System.out.println("player2 has this many pointes " + player2.GetPoints());
-				Winner = WinState();
-				PlayerTurn = 1;
+//				Winner = WinState();
+				PlayerTurn.SetTurn(1);
 			}
 		}
 	}
