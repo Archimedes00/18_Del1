@@ -14,37 +14,37 @@
 
 public class GameController {
 
-	int SumOfDice = 0;				
 
-	Player player1 = new Player();
-	Player player2 = new Player();
-	Die die1 = new Die();
-	Die die2 = new Die();
 	
 	public static void main(String[] args) {
 
-		GameController gc = new GameController();
+		int SumOfDice = 0;				
 
-		while(gc.WinState() == 0){
+		Player player1 = new Player();
+		Player player2 = new Player();
+		Die die1 = new Die();
+		Die die2 = new Die();
 
-			if (gc.PlayerTurn == 1){
-				gc.SumOfDice = gc.die1.roll() + gc.die2.roll();
-				gc.player1.SetPoints( gc.LoseOfPoints(gc.player1) );
+		while(WinState() == 0){
+
+			if (PlayerTurn == 1){
+				SumOfDice = die1.roll() + die2.roll();
+				player1.SetPoints( LoseOfPoints(player1) );
 				System.out.println("");
-				System.out.println("player1 rolled " + gc.SumOfDice);
-				System.out.println("player1's has " + gc.player1.GetPoints() + " points");
-				gc.Winner = gc.WinState();
-				gc.PlayerTurn = 2;
+				System.out.println("player1 rolled " + SumOfDice);
+				System.out.println("player1's has " + player1.GetPoints() + " points");
+				Winner = WinState();
+				PlayerTurn = 2;
 			}
 
-			if(gc.PlayerTurn == 2){
-				gc.SumOfDice = gc.die1.roll() + gc.die2.roll();
-				gc.player2.SetPoints( gc.LoseOfPoints(gc.player2) );
+			if(PlayerTurn == 2){
+				SumOfDice = die1.roll() + die2.roll();
+				player2.SetPoints( LoseOfPoints(player2) );
 				System.out.println("");
-				System.out.println("player2 rullede " + gc.SumOfDice);
-				System.out.println("player2 has this many pointes " + gc.player2.GetPoints());
-				gc.Winner = gc.WinState();
-				gc.PlayerTurn = 1;
+				System.out.println("player2 rullede " + SumOfDice);
+				System.out.println("player2 has this many pointes " + player2.GetPoints());
+				Winner = WinState();
+				PlayerTurn = 1;
 			}
 		}
 	}
