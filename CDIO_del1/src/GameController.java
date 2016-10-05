@@ -1,3 +1,16 @@
+/*
+ * Metoden WinState er blevet flyttet til klassen "Player"
+ * Derudover er der blevet flyttet et par variabler.
+ * De kan nu også findes under "Player" klassen.
+ * 
+ * Metoderne LoseOfPoints og TwoOfAKind skal rykkes ind i Helenes 
+ * klasse "DiceCup" og er derfor også ud kommenteret :)
+ * 
+ * Main metoden skal opdateres så den passer til de nye ændringer.
+ * 
+ * Med venlig hilsen 
+ * Kasper :)
+ */
 
 public class GameController {
 
@@ -35,7 +48,7 @@ public class GameController {
 			}
 		}
 	}
-
+	
 //	private int WinState() {
 //
 //		if (player1.GetPoints() >= 40){
@@ -51,29 +64,26 @@ public class GameController {
 //			return 0;
 //		}
 //	}
-
-
-	private int LoseOfPoints(Player p) {
-
-		if(SumOfDice == 2){
-			return 0;
-		}
-		else {
-			return p.GetPoints() + SumOfDice;		//	Kan det her lade sig gÃ¸re??. Ja det kan det :-)
-		}
-
-
-	}
-
-	private int TwoOfAKind() {
-
-		if (PlayerTurn == 1){
-			if (die1 == die2 && SumOfDice > 2){
-
-			}
-		}
-
-		return 0;
-	}
+//
+//	private int LoseOfPoints(Player p) {
+//
+//		if(SumOfDice == 2){
+//			return 0;
+//		}
+//		else {
+//			return p.GetPoints() + SumOfDice;		//	Kan det her lade sig gÃ¸re??. Ja det kan det :-)
+//		}
+//	}
+//
+//	private int TwoOfAKind() {
+//
+//		if (PlayerTurn == 1){
+//			if (die1 == die2 && SumOfDice > 2){
+//
+//			}
+//		}
+//
+//		return 0;
+//	}
 
 }	
