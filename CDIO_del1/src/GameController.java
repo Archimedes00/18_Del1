@@ -25,11 +25,14 @@ public class GameController {
 		Die die1 = new Die();
 		Die die2 = new Die();
 
-		while(WinState() == 0){
+		Player WinState = new Player(); //WinState object fra Player class
+		Player PlayerTurn = new Player(); //PlayerTurn object fra Player class
+		
+		while(WinState.isWinner() == false){ 
 
-			if (PlayerTurn == 1){
+			if (PlayerTurn.GetTurn() == 1){
 				SumOfDice = die1.roll() + die2.roll();
-				player1.SetPoints( LoseOfPoints(player1) );
+//				player1.SetPoints( LoseOfPoints(player1) ); 
 				System.out.println("");
 				System.out.println("player1 rolled " + SumOfDice);
 				System.out.println("player1's has " + player1.GetPoints() + " points");
@@ -37,9 +40,9 @@ public class GameController {
 				PlayerTurn = 2;
 			}
 
-			if(PlayerTurn == 2){
+			if(PlayerTurn.GetTurn() == 2){
 				SumOfDice = die1.roll() + die2.roll();
-				player2.SetPoints( LoseOfPoints(player2) );
+//				player2.SetPoints( LoseOfPoints(player2) );
 				System.out.println("");
 				System.out.println("player2 rullede " + SumOfDice);
 				System.out.println("player2 has this many pointes " + player2.GetPoints());
