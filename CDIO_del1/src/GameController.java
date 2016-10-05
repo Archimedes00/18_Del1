@@ -1,9 +1,7 @@
 
 public class GameController {
 
-	int SumOfDice = 0;				// kommer fra Player-klasse
-	int PlayerTurn = 1;				// kommer fra min egen klasse
-	int Winner = 0; 
+	int SumOfDice = 0;				
 
 	Player player1 = new Player();
 	Player player2 = new Player();
@@ -38,21 +36,21 @@ public class GameController {
 		}
 	}
 
-	private int WinState() {
-
-		if (player1.GetPoints() >= 40){
-			System.out.println("Player 1 has won the g!");
-			return 1;
-		}
-
-		else if (player2.GetPoints() >= 40){
-			System.out.println("Player 2 has won the g!");
-			return 2;
-		}
-		else {
-			return 0;
-		}
-	}
+//	private int WinState() {
+//
+//		if (player1.GetPoints() >= 40){
+//			System.out.println("Player 1 has won the g!");
+//			return 1;
+//		}
+//
+//		else if (player2.GetPoints() >= 40){
+//			System.out.println("Player 2 has won the g!");
+//			return 2;
+//		}
+//		else {
+//			return 0;
+//		}
+//	}
 
 
 	private int LoseOfPoints(Player p) {
