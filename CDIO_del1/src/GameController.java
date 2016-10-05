@@ -28,23 +28,24 @@ public class GameController {
 
 		while(player1.isWinner() == false && player2.isWinner() == false){ 
 
-			if (player1.GetTurn() == 1){
+			if (player1.GetTurn() == 1)
+			{
 				SumOfDice = die1.roll() + die2.roll();
+				player1.SetPoints(player1.GetPoints() + SumOfDice);
 				//								player1.SetPoints( LoseOfPoints(player1) );
-				System.out.println("");
-				System.out.println("player1 rolled " + SumOfDice);
+				System.out.println();
+				System.out.println("player1 rolled: " + SumOfDice);
 				System.out.println("player1's has " + player1.GetPoints() + " points");
-				//								Winner = WinState();
 				player1.SetTurn(2);
 			}
-
-			if(player2.GetTurn() == 2){
+			else if(player2.GetTurn() == 2)
+			{
 				SumOfDice = die1.roll() + die2.roll();
+				player2.SetPoints(player2.GetPoints() + SumOfDice);
 				//				player2.SetPoints( LoseOfPoints(player2) );
-				System.out.println("");
-				System.out.println("player2 rullede " + SumOfDice);
+				System.out.println();
+				System.out.println("player2 rullede: " + SumOfDice);
 				System.out.println("player2 has this many pointes " + player2.GetPoints());
-				//				Winner = WinState();
 				player2.SetTurn(1);
 			}
 		}
