@@ -1,6 +1,6 @@
 public class Player 
 {
-	private int playerTurn = 1;
+	private static int playerTurn = 1;
 	private int points = 0;
 	
 	public void SetTurn(int value)
