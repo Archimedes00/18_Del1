@@ -1,3 +1,4 @@
+package Test;
 //import static org.junit.Assert.*;
 
 //import org.junit.Test;
@@ -16,7 +17,7 @@ public class DieTest {
 		int c5 = 0;
 		int c6 = 0;
 
-		for(int i = 0; i <= 10000; i++)
+		for(int i = 0; i <= 1000; i++)
 		{
 
 			switch (d1.roll())

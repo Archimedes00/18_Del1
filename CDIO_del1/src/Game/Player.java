@@ -1,3 +1,4 @@
+package Game;
 public class Player 
 {
 	private static int playerTurn = 1;
