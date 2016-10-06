@@ -16,7 +16,7 @@ import java.awt.event.ActionEvent;
 
 public class GameController {
 
-	static boolean click = true;
+	static boolean click = false;
 
 	public static void main(String[] args) {
 
@@ -31,6 +31,8 @@ public class GameController {
 		f.setVisible(true);
 
 		while(player1.isWinner() == false && player2.isWinner() == false){
+
+			System.out.println(click);
 
 			if (player1.GetTurn() == 1 && click)
 			{
@@ -49,6 +51,7 @@ public class GameController {
 				f.PointPlayer1.setText(player1.GetPoints() + "points");
 
 				player1.SetTurn(2);
+				f.turnLab.setText("player 2 turn");
 				click = false;
 				System.out.println("click: " + GameController.click);
 			}
@@ -69,6 +72,7 @@ public class GameController {
 				f.PointPlayer2.setText(player2.GetPoints() + "points");
 
 				player2.SetTurn(1);
+				f.turnLab.setText("player 1 turn");
 				click = false;
 				System.out.println("click: " + GameController.click);
 			}

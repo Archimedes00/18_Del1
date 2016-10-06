@@ -5,14 +5,15 @@ import java.awt.event.*;
 
 class MyFrame extends JFrame {
 
-	private JButton NytSpilBut = new JButton("Nyt Spil");
+	private JButton NytSpilBut = new JButton("Exit");
 	private JButton dicebut = new JButton("Roll the dice");
 
 	public JLabel player1Lab = new JLabel("Spiller 1 Point:");
 	public JLabel PointPlayer1 = new JLabel("0");
 	public JLabel Player2Lab = new JLabel("Spiller 2 Point:");
 	public JLabel PointPlayer2 = new JLabel("0");
-	public JLabel infoLab = new JLabel("Spillet starter....");
+	public JLabel infoLab = new JLabel("Let Play!");
+	public JLabel turnLab = new JLabel("Player 1 turn");
 
 
 	public MyFrame(){
@@ -27,14 +28,15 @@ class MyFrame extends JFrame {
 	}
 
 	private void initComponent(){
-		NytSpilBut.setBounds(300,130, 70,25);
+		NytSpilBut.setBounds(280,130, 110,25);
 		dicebut.setBounds(280,100, 110,25);
 
 		player1Lab.setBounds(20,10,100,20);
 		PointPlayer1.setBounds(20,25,100,20);
 		Player2Lab.setBounds(220,10,100,20);
 		PointPlayer2.setBounds(220,25,100,20);
-		infoLab.setBounds(20,140,100,20);
+		infoLab.setBounds(20,140,150,20);
+		turnLab.setBounds(20,100,150,20);
 
 		add(NytSpilBut);
 		add(dicebut);
@@ -44,8 +46,8 @@ class MyFrame extends JFrame {
 		add(PointPlayer1);
 		add(Player2Lab);
 		add(infoLab);
+		add(turnLab);
 
-		infoLab.setText("hej");
 
 	}
 
