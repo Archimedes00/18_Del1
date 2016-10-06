@@ -2,33 +2,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public static void main(String[] args) {
-		MyFrame f = new MyFrame();
-		f.setVisible(true);
-		}
-
 
 class MyFrame extends JFrame {
 
 	private JButton NytSpilBut = new JButton("Nyt Spil");
 	private JButton dicebut = new JButton("Roll the dice");
 
-	private JLabel player1Lab = new JLabel("Spiller 1 Point:");
-	private JLabel PointPlayer1 = new JLabel("0");
-	private JLabel Player2Lab = new JLabel("Spiller 2 Point:");
-	private JLabel PointPlayer2 = new JLabel("0");
-	private JLabel infoLab = new JLabel("Spillet starter....");
+	public JLabel player1Lab = new JLabel("Spiller 1 Point:");
+	public JLabel PointPlayer1 = new JLabel("0");
+	public JLabel Player2Lab = new JLabel("Spiller 2 Point:");
+	public JLabel PointPlayer2 = new JLabel("0");
+	public JLabel infoLab = new JLabel("Spillet starter....");
 
 
 	public MyFrame(){
 		setTitle("Dice Game - Gruppe 18");
 		setSize(400,200);
 		setLocation(new Point(300,200));
-		setLayout(null);    
+		setLayout(null);
 		setResizable(false);
 
-		initComponent();    
-		initEvent();    
+		initComponent();
+		initEvent();
 	}
 
 	private void initComponent(){
@@ -49,6 +44,8 @@ class MyFrame extends JFrame {
 		add(PointPlayer1);
 		add(Player2Lab);
 		add(infoLab);
+
+		infoLab.setText("hej");
 
 	}
 
@@ -77,9 +74,10 @@ class MyFrame extends JFrame {
 		System.exit(0); // stopper programmet på Knapper Nyt spil
 	}
 
-	private void btndiceClick(ActionEvent evt){
-		System.out.println("click"); // udkskriver Click ved Tryk på knaps
 
+	public void btndiceClick(ActionEvent evt){
+		GameController.click = true;
+		System.out.println("click: " + GameController.click);
 	}
 }
 

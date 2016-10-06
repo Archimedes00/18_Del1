@@ -1,54 +1,85 @@
+import java.awt.event.ActionEvent;
+
 /*
  * Metoden WinState er blevet flyttet til klassen "Player"
  * Derudover er der blevet flyttet et par variabler.
- * De kan nu også findes under "Player" klassen.
- * 
- * Metoderne LoseOfPoints og TwoOfAKind skal rykkes ind i Helenes 
- * klasse "DiceCup" og er derfor også ud kommenteret :)
- * 
- * Main metoden skal opdateres så den passer til de nye ændringer.
- * 
- * Med venlig hilsen 
+ * De kan nu ogsï¿½ findes under "Player" klassen.
+ *
+ * Metoderne LoseOfPoints og TwoOfAKind skal rykkes ind i Helenes
+ * klasse "DiceCup" og er derfor ogsï¿½ ud kommenteret :)
+ *
+ * Main metoden skal opdateres sï¿½ den passer til de nye ï¿½ndringer.
+ *
+ * Med venlig hilsen
  * Kasper :)
  */
 
 public class GameController {
 
-
+	static boolean click = true;
 
 	public static void main(String[] args) {
 
-		int SumOfDice = 0;				
+		int SumOfDice = 0;
 
 		Player player1 = new Player();
 		Player player2 = new Player();
 		Die die1 = new Die();
 		Die die2 = new Die();
 
+		MyFrame f = new MyFrame();
+		f.setVisible(true);
 
-		while(player1.isWinner() == false && player2.isWinner() == false){ 
+		while(player1.isWinner() == false && player2.isWinner() == false){
 
-			if (player1.GetTurn() == 1)
+			if (player1.GetTurn() == 1 && click)
 			{
+				f.infoLab.setText("player1 tur");
+
 				SumOfDice = die1.roll() + die2.roll();
 				player1.SetPoints(player1.GetPoints() + SumOfDice);
 				//								player1.SetPoints( LoseOfPoints(player1) );
 				System.out.println();
 				System.out.println("player1 rolled: " + SumOfDice);
+
+				f.infoLab.setText("player1 rolled: " + SumOfDice);
+
 				System.out.println("player1's has " + player1.GetPoints() + " points");
+
+				f.PointPlayer1.setText(player1.GetPoints() + "points");
+
 				player1.SetTurn(2);
+				click = false;
+				System.out.println("click: " + GameController.click);
 			}
-			else if(player2.GetTurn() == 2)
+			else if(player2.GetTurn() == 2 && click)
 			{
+				f.infoLab.setText("player2 tur");
+
 				SumOfDice = die1.roll() + die2.roll();
 				player2.SetPoints(player2.GetPoints() + SumOfDice);
 				//				player2.SetPoints( LoseOfPoints(player2) );
 				System.out.println();
 				System.out.println("player2 rullede: " + SumOfDice);
+
+				f.infoLab.setText("player2 rolled: " + SumOfDice);
+
 				System.out.println("player2 has this many pointes " + player2.GetPoints());
+
+				f.PointPlayer2.setText(player2.GetPoints() + "points");
+
 				player2.SetTurn(1);
+				click = false;
+				System.out.println("click: " + GameController.click);
 			}
 		}
+
+		if(player1.isWinner())
+			f.infoLab.setText("Player 1 is the winner!");
+		if(player2.isWinner())
+			f.infoLab.setText("Player 2 is the winner!");
+
+
 	}
 }
 
