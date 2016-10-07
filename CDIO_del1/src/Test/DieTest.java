@@ -3,6 +3,8 @@ package Test;
 
 //import org.junit.Test;
 
+import Game.Die;
+
 public class DieTest {
 
 	//@Test
