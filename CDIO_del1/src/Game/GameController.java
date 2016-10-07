@@ -31,9 +31,14 @@ public class GameController {
 		MyFrame f = new MyFrame();
 		f.setVisible(true);
 
-		while(player1.isWinner() == false && player2.isWinner() == false){
 
-			System.out.println(click);
+		while(player1.isWinner() == false && player2.isWinner() == false){
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+
+			}
+			//System.out.println(click);
 
 			if (player1.GetTurn() == 1 && click)
 			{

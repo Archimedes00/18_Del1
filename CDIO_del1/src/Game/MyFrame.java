@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 class MyFrame extends JFrame {
 
-	private JButton NytSpilBut = new JButton("Exit");
+	private JButton nytSpilBut = new JButton("Exit");
 	private JButton dicebut = new JButton("Roll the dice");
 
 	public JLabel player1Lab = new JLabel("Spiller 1 Point:");
@@ -29,7 +29,7 @@ class MyFrame extends JFrame {
 	}
 
 	private void initComponent(){
-		NytSpilBut.setBounds(280,130, 110,25);
+		nytSpilBut.setBounds(280,130, 110,25);
 		dicebut.setBounds(280,100, 110,25);
 
 		player1Lab.setBounds(20,10,100,20);
@@ -39,7 +39,7 @@ class MyFrame extends JFrame {
 		infoLab.setBounds(20,140,150,20);
 		turnLab.setBounds(20,100,150,20);
 
-		add(NytSpilBut);
+		add(nytSpilBut);
 		add(dicebut);
 
 		add(player1Lab);
@@ -60,7 +60,7 @@ class MyFrame extends JFrame {
 			}
 		});
 
-		NytSpilBut.addActionListener(new ActionListener() {
+		nytSpilBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnstopClick(e);
 			}
