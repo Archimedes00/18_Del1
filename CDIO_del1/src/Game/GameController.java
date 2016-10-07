@@ -32,6 +32,7 @@ public class GameController {
 		f.setVisible(true);
 
 
+
 		while(player1.isWinner() == false && player2.isWinner() == false){
 			try {
 				Thread.sleep(100);
