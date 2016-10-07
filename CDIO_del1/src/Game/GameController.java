@@ -39,7 +39,6 @@ public class GameController {
 			} catch (InterruptedException e) {
 
 			}
-			//System.out.println(click);
 
 			if (player1.GetTurn() == 1 && click)
 			{
@@ -60,7 +59,7 @@ public class GameController {
 				player1.SetTurn(2);
 				f.turnLab.setText("player 2 turn");
 				click = false;
-				System.out.println("click: " + GameController.click);
+
 			}
 			else if(player2.GetTurn() == 2 && click)
 			{
@@ -81,15 +80,20 @@ public class GameController {
 				player2.SetTurn(1);
 				f.turnLab.setText("player 1 turn");
 				click = false;
-				System.out.println("click: " + GameController.click);
+
 			}
 		}
 
-		if(player1.isWinner())
+		if(player1.isWinner()) {
+			System.out.println("");
 			f.infoLab.setText("Player 1 is the winner!");
-		if(player2.isWinner())
+			System.out.println("Player 1 is the winner!");
+		}
+		if(player2.isWinner()) {
+			System.out.println("");
 			f.infoLab.setText("Player 2 is the winner!");
-
+			System.out.println("Player 2 is the winner!");
+		}
 
 	}
 }

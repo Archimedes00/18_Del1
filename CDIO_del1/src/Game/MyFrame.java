@@ -80,7 +80,6 @@ class MyFrame extends JFrame {
 
 	public void btndiceClick(ActionEvent evt){
 		GameController.click = true;
-		System.out.println("click: " + GameController.click);
 	}
 }
 
